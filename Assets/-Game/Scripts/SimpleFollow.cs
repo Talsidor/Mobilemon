@@ -6,6 +6,6 @@ public class SimpleFollow : MonoBehaviour {
 	public Transform follow;
 
 	void Update () {
-		transform.position = follow.position;
+		if(follow) transform.position = follow.position;
 	}
 }

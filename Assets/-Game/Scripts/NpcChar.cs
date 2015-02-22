@@ -14,14 +14,17 @@ public class NpcChar : Character {
 	}
 
 	override protected void Update () {
-		if(moveRandomly) {
-			if(delayBeforeMove <= 0) {
-				delayBeforeMove = timeBetweenMovements;
-				BeginMovement( (Moving)Random.Range(1, 5) );
+		if(photonView.isMine) {
+			if(moveRandomly) {
+				if(delayBeforeMove <= 0) {
+					delayBeforeMove = timeBetweenMovements;
+					BeginMovement( (Moving)Random.Range(1, 5) );
+				}
+				else 
+					delayBeforeMove -= Time.deltaTime;
 			}
-			else 
-				delayBeforeMove -= Time.deltaTime;
 		}
+
 		base.Update();
 	}
 }
