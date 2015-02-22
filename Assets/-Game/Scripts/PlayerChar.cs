@@ -3,8 +3,12 @@ using System.Collections;
 
 public class PlayerChar : Character {
 
+	TextMesh tm;
+
 	override protected void Start () {
 		base.Start();
+		tm = GetComponentInChildren<TextMesh>();
+		tm.text = (photonView.viewID / 1000).ToString();
 	}
 
 	override protected void Update () {

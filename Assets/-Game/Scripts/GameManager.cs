@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour {
 
 	void OnGUI() {
 		GUILayout.Label(PhotonNetwork.connectionStateDetailed.ToString());
+		//GUILayout.Label( System.Environment.UserName );
 	}
 
 	public void GuiInput_Up () {
